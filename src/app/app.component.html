@@ -1,9 +1,43 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-  <button type="submit" class="btn btn-primary submit-button">Submit</button>
-</form>
+<!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form> -->
 
-
-<!-- Copyright 2018 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
+<nz-layout>
+  <nz-header>
+    SI Compétence
+  </nz-header>
+  <nz-content>
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>EAP</nz-breadcrumb-item>
+      <nz-breadcrumb-item>Partie 1</nz-breadcrumb-item>
+    </nz-breadcrumb>
+    <nz-page-header
+      class="site-page-header"
+      nzTitle="PARTIE 1 : ENVIRONNEMENT DE TRAVAIL"
+      nzSubtitle=""
+    ></nz-page-header>
+    <div class="inner-content">
+      <form
+        nz-form
+        [nzLayout]="'vertical'"
+        [formGroup]="form"
+        (ngSubmit)="Submit()"
+      >
+        <formly-form
+          [form]="form"
+          [model]="model"
+          [fields]="fields"
+          [options]="options"
+        >
+        </formly-form>
+        <button nz-button nzType="primary" type="submit">
+          Suivant
+        </button>
+        <button nz-button nzType="dashed" nzDanger type="reset">
+          Effacer
+        </button>
+      </form>
+    </div>
+  </nz-content>
+</nz-layout>
